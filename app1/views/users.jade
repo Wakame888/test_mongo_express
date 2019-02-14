@@ -1,13 +1,11 @@
 extends layout
 
 block content
-    h1.
-        user list
-    table(border=1)
-        tr
-            td User Name
-            td E-Mail
-        each user, i in userList
-            tr
-                td= user.user
-                td= user['e-mail']
+    h1 user list
+    
+    each user, i in userList
+        div.card(style="width: 18rem; margin: 1rem; display: inline-block;")
+            div.card-header #{user.user}
+            div.card-body 
+                p #{user['e-mail']}
+                input.btn.btn-outline-secondary(type="button", value="Detail")
